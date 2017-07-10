@@ -2,4 +2,48 @@
     <string name="app_name">MeasureIt</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="customer_activity">Customer</string>
+    <string name="title_activity_create_customer">Create Customer</string>
+    <string name="title_activity_customer_detail">Customer Detail</string>
+    <string name="title_activity_create_measurement">Create Measurement</string>
+    <string name="select_measurement_type">Select Type</string>
+    <string name="select_pocket_type">Pocket Type</string>
+    <string name="select_shirt_type">Shirt Type</string>
+    <string name="select_shirt_style">Shirt Style</string>
+    <string name="select_shoulder_style">Shoulder Style</string>
+
+
+    <string name="check_bottom_zip">Bottom Zip</string>
+    <string name="check_ticket_pocket">Ticket Pocket</string>
+    <string name="check_side_stitch">Side Stitch</string>
+    <string name="check_patti">Patti</string>
+    <string name="check_back_pleat">Back Pleat</string>
+    <string name="check_hand_fold">Hand Fold</string>
+    <string name="select_shoulderstyle">Shoulder Style</string>
+
+    <string-array name="measurement_type">
+        <item>Pant</item>
+        <item>Shirt</item>
+    </string-array>
+
+    <string-array name="pocket_type">
+        <item>Normal</item>
+        <item>High-Fi</item>
+    </string-array>
+
+    <string-array name="shirt_type">
+        <item>Half Hand</item>
+        <item>Full Hand</item>
+    </string-array>
+
+    <string-array name="shirt_style">
+        <item>Formal</item>
+        <item>Casual</item>
+    </string-array>
+
+    <string-array name="shoulder_style">
+        <item>Short</item>
+        <item>Medium</item>
+        <item>Long</item>
+    </string-array>
 </resources>

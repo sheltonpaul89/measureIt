@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -17,6 +17,48 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.CustomerActivity"
+            android:label="@string/customer_activity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity
+            android:name=".activities.CreateCustomerActivity"
+            android:label="@string/title_activity_create_customer"
+            android:parentActivityName=".activities.CustomerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.paul.shelton.measureit.activities.CustomerActivity" />
+        </activity>
+        <activity
+            android:name=".activities.CustomerDetailActivity"
+            android:label="@string/title_activity_customer_detail"
+            android:parentActivityName=".activities.CustomerActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.paul.shelton.measureit.activities.CustomerActivity" />
+        </activity>
+        <activity
+            android:name=".activities.CreateMeasurement"
+            android:label="@string/title_activity_create_measurement"
+            android:parentActivityName=".activities.CustomerDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--<meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.paul.shelton.measureit.activities.CustomerDetailActivity" />-->
         </activity>
     </application>
 

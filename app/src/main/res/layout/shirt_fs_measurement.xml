@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/shirt_fs_measurement">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="center_vertical"
+        android:columnCount="19"
+        android:rowCount="19"
+        android:layout_margin="40dp">
+
+        <EditText
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/s_collor"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:hint="Collor" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/s_pocket"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:hint="Pocket" />
+
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/create_shirt_fs"
+            android:layout_row="1"
+            android:layout_column="18" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/s_mundah"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:hint="Mundah" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/s_hand_cuff"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:hint="Hand Cuff" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_shirt_style"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <Spinner
+            android:id="@+id/s_style_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:hint="Shirt Style"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:entries="@array/shirt_style"
+            android:prompt="@string/select_shirt_style" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_shoulderstyle"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <Spinner
+            android:id="@+id/s_shoulder_type"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:hint="Shoulder Style"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:entries="@array/shoulder_style"
+            android:prompt="@string/select_shoulderstyle" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_shirt_type"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <Spinner
+            android:id="@+id/s_shirt_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:hint="Shirt Type"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:entries="@array/shirt_type"
+            android:prompt="@string/select_shirt_type" />
+
+        <CheckBox android:id="@+id/s_patti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="10"
+            android:layout_column="0"
+            android:text="@string/check_patti" />
+
+
+        <CheckBox android:id="@+id/s_back_pleat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="10"
+            android:layout_column="1"
+            android:text="@string/check_back_pleat" />
+
+
+
+        <CheckBox android:id="@+id/s_hand_fold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="12"
+            android:layout_column="1"
+            android:text="@string/check_hand_fold" />
+
+
+
+
+    </GridLayout>
+</LinearLayout>
