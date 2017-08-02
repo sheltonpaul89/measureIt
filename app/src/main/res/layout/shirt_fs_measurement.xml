@@ -4,21 +4,45 @@
     android:layout_height="match_parent"
     android:id="@+id/shirt_fs_measurement">
 
-    <GridLayout
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_gravity="center_vertical"
-        android:columnCount="19"
-        android:rowCount="19"
-        android:layout_margin="40dp">
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
 
-        <EditText
-            android:layout_width="79dp"
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Collor"
+            android:id="@+id/textc"
+            android:layout_column="0" />
+
+    <EditText
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/s_collor"
             android:layout_row="1"
             android:layout_column="0"
             android:hint="Collor" />
+    </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Pocket"
+            android:id="@+id/textp"
+            android:layout_column="0" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -28,16 +52,20 @@
             android:layout_column="1"
             android:hint="Pocket" />
 
+        </TableRow>
 
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create"
-            android:id="@+id/create_shirt_fs"
-            android:layout_row="1"
-            android:layout_column="18" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Mundah"
+            android:id="@+id/textm"
+            android:layout_column="0" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -46,6 +74,21 @@
             android:layout_row="2"
             android:layout_column="0"
             android:hint="Mundah" />
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Hand Cuff"
+            android:id="@+id/texthc"
+            android:layout_column="0" />
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,6 +96,12 @@
             android:layout_row="2"
             android:layout_column="1"
             android:hint="Hand Cuff" />
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
 
 
         <TextView
@@ -77,6 +126,12 @@
             android:entries="@array/shirt_style"
             android:prompt="@string/select_shirt_style" />
 
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -99,6 +154,11 @@
             android:layout_marginBottom="20dp"
             android:entries="@array/shoulder_style"
             android:prompt="@string/select_shoulderstyle" />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
 
 
         <TextView
@@ -123,6 +183,12 @@
             android:entries="@array/shirt_type"
             android:prompt="@string/select_shirt_type" />
 
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
         <CheckBox android:id="@+id/s_patti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -146,9 +212,35 @@
             android:layout_row="12"
             android:layout_column="1"
             android:text="@string/check_hand_fold" />
+    </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp">
 
-
-
-
-    </GridLayout>
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/create_shirt_fs"
+                android:layout_gravity="center_vertical"
+                android:layout_span="3" />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:paddingTop="0dp">
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Order"
+                android:id="@+id/add_shirt_to_order"
+                android:layout_gravity="center_vertical"
+                android:layout_span="3" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

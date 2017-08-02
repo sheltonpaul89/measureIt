@@ -1,8 +1,7 @@
-package com.paul.shelton.measureit.Listners;
+package com.paul.shelton.measureit.listners;
 
 import android.util.Log;
 import android.view.View;
-import android.view.ViewStub;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.LinearLayout;

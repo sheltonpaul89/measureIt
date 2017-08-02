@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:id="@+id/pant_measurement">
 
@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:columnCount="19"
-        android:rowCount="4"
+        android:rowCount="6"
         android:layout_margin="40dp">
 
         <EditText
@@ -46,12 +46,12 @@
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Create"
+            android:text="Save"
             android:id="@+id/create_shirt_hs"
-            android:layout_row="1"
-            android:layout_column="18"
+            android:layout_row="5"
+            android:layout_column="0"
             android:layout_gravity="center_vertical" />
 
     </GridLayout>

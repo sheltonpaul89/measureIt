@@ -1,10 +1,8 @@
-package com.paul.shelton.measureit.Models;
+package com.paul.shelton.measureit.models;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
@@ -13,7 +11,7 @@ import android.util.Log;
 public class Customer  {
     public static final String DATABASE_NAME = "measureIt.db";
     private static final int DATABASE_VERSION = 1;
-    public static final String CUSTOMER_TABLE = "customer";
+    public static final String CUSTOMER_TABLE = "Customer";
     public static final String CUSTOMER_ID = "_id";
     public static final String CUSTOMER_NAME = "name";
     public static final String CUSTOMER_EMAIL = "email";
@@ -26,7 +24,7 @@ public class Customer  {
 //    @Override
     public void CreateTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + CUSTOMER_TABLE + "(" +
-                CUSTOMER_ID + " INTEGER PRIMARY KEY, " +
+                CUSTOMER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 CUSTOMER_NAME + " TEXT, " +
                 CUSTOMER_EMAIL + " TEXT, " +
                 CUSTOMER_PHONE + " TEXT)"
@@ -38,13 +36,13 @@ public class Customer  {
         CreateTable(db);
     }
 
-    public long insertCustomer(SQLiteDatabase db,String name, String email, String phone) {
+    public Long insertCustomer(SQLiteDatabase db,String name, String email, String phone) {
 //        SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(CUSTOMER_NAME, name);
         contentValues.put(CUSTOMER_EMAIL, email);
         contentValues.put(CUSTOMER_PHONE, phone);
-        long id = db.insert(CUSTOMER_TABLE, null, contentValues);
+        Long id = db.insert(CUSTOMER_TABLE, null, contentValues);
         Log.v("Customer Inserted ", (Long.toString(id)));
         return id;
     }
@@ -59,10 +57,12 @@ public class Customer  {
         return true;
     }
 
-    public Cursor getCustomer(SQLiteDatabase db,int id) {
+    public Cursor getCustomer(SQLiteDatabase db, Long id) {
 //        SQLiteDatabase db = this.getReadableDatabase();
+        Log.i("Query","SELECT * FROM " + CUSTOMER_TABLE + " WHERE " +
+                CUSTOMER_ID + "="+Long.toString(id));
         Cursor res = db.rawQuery( "SELECT * FROM " + CUSTOMER_TABLE + " WHERE " +
-                CUSTOMER_ID + "=?", new String[] { Integer.toString(id) } );
+                CUSTOMER_ID + "="+Long.toString(id), null );
         return res;
     }
     public Cursor getAllCustomers(SQLiteDatabase db) {

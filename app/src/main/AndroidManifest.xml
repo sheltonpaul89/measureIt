@@ -23,15 +23,22 @@
             android:label="@string/customer_activity"
             android:parentActivityName=".activities.MainActivity" />
         <activity
+            android:name=".activities.CustomerListActivity"
+            android:label="@string/customer_list"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity
             android:name=".activities.CreateCustomerActivity"
             android:label="@string/title_activity_create_customer"
             android:parentActivityName=".activities.CustomerActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.paul.shelton.measureit.activities.CustomerActivity" />
@@ -39,15 +46,15 @@
         <activity
             android:name=".activities.CustomerDetailActivity"
             android:label="@string/title_activity_customer_detail"
-            android:parentActivityName=".activities.CustomerActivity"
             android:launchMode="singleTop"
+            android:parentActivityName=".activities.CustomerActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.paul.shelton.measureit.activities.CustomerActivity" />
         </activity>
         <activity
-            android:name=".activities.CreateMeasurement"
+            android:name=".activities.MeasurementActivity"
             android:label="@string/title_activity_create_measurement"
             android:parentActivityName=".activities.CustomerDetailActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -56,10 +63,25 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--<meta-data
+            <!--
+                <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.paul.shelton.measureit.activities.CustomerDetailActivity" />-->
+                android:value="com.paul.shelton.measureit.activities.CustomerDetailActivity" />
+            -->
         </activity>
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".activities.OrderActivity"
+            android:label="@string/title_activity_order"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

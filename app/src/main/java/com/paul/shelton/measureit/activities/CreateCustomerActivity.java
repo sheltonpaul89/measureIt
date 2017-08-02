@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.paul.shelton.measureit.Models.Customer;
 import com.paul.shelton.measureit.R;
 import com.paul.shelton.measureit.utils.DBUtility;
 
@@ -27,14 +26,14 @@ public class CreateCustomerActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         final Context cont = this;
         final Button button = (Button) findViewById(R.id.createCustomer);
@@ -51,7 +50,7 @@ public class CreateCustomerActivity extends AppCompatActivity {
     }
 
     public void insertCustomer( String name, String email, String phone) {
-            long customerID = dbUtility.insertCustomer(name,email,phone);
+            Long customerID = dbUtility.insertCustomer(name,email,phone);
             Toast.makeText(getApplicationContext(), "Customer Inserted : "+ Long.toString(customerID) , Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), CustomerDetailActivity.class);
             Bundle b = new Bundle();

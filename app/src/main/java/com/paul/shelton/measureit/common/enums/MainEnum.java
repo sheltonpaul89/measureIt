@@ -8,6 +8,8 @@ import java.util.List;
  * Created by ecom-shelton.paul on 08/07/17.
  */
 public enum MainEnum {
-        CUSTOMERS,ORDERS,BILLS,
-        DELIVERY_DATE;
+        NEW_CUSTOMER,
+        CUSTOMER_SEARCH,
+        ORDER_STATUS,
+        DELIVERY_DATES;
 }

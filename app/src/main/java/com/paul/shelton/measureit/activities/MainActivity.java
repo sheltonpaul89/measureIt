@@ -37,20 +37,23 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 String optionText=(String)parent.getItemAtPosition(position);
+                Log.v("SelectedOption", optionText);
                 MainEnum option = MainEnum.valueOf(optionText.replace(" ","_"));
+                Intent intent=null;
                 switch (option)
                 {
-                    case CUSTOMERS:
-                        Intent intent = new Intent(cont, CustomerActivity.class);
-                        startActivity(intent);
+                    case NEW_CUSTOMER:
+                        intent = new Intent(cont, CreateCustomerActivity.class);
                         break;
-                    case ORDERS:
+                    case CUSTOMER_SEARCH:
+                        intent = new Intent(cont, CustomerListActivity.class);
                         break;
-                    case BILLS:
+                    case ORDER_STATUS:
                         break;
-                    case DELIVERY_DATE:
+                    case DELIVERY_DATES:
                         break;
                 }
+                startActivity(intent);
             }
         });
     }

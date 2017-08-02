@@ -49,5 +49,14 @@
             android:text="Add Measurement"
             android:id="@+id/add_measurement"
             android:layout_gravity="right" />
+
+        <ListView
+            android:id="@+id/measurement_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp">
+        </ListView>
     </LinearLayout>
 </RelativeLayout>

@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.paul.shelton.measureit.activities.CreateMeasurement"
+    tools:context=".activities.MeasurementActivity"
     tools:showIn="@layout/activity_create_measurement"
     android:orientation="vertical">
 
@@ -33,12 +33,12 @@
 
         <include layout="@layout/pant_measurement" android:id="@+id/include_pant"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical" />
 
         <include layout="@layout/shirt_fs_measurement" android:id="@+id/include_shirt_fs"
             android:layout_width="fill_parent"
-            android:layout_height="412dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"/>
 
         <include layout="@layout/shirt_hs_measurement" android:id="@+id/include_shirt_hs"

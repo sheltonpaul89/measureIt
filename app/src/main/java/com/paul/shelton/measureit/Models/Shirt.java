@@ -1,10 +1,8 @@
-package com.paul.shelton.measureit.Models;
+package com.paul.shelton.measureit.models;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -39,7 +37,7 @@ public class Shirt {
     public void CreateTable(SQLiteDatabase db) {
         Log.v("Create application Table",SHIRT_TABLE );
         db.execSQL("CREATE TABLE " + SHIRT_TABLE + "(" +
-                SHIRT_ID + " INTEGER PRIMARY KEY, " +
+                SHIRT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLLOR + " TEXT, " +
                 POCKET + " TEXT, " +
                 HAND_CUFF + " TEXT, " +
@@ -62,7 +60,6 @@ public class Shirt {
     }
 
     public Long insertShirt(SQLiteDatabase db,String collor,String pocket,String hand_cuff,String shirt_style,String shoulder_style,String shirt_type,String mundah,Boolean patti,Boolean back_pleat,Boolean hand_fold,Long customer_id) {
-//        SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLLOR, collor);
         contentValues.put(POCKET, pocket);
@@ -88,8 +85,7 @@ public class Shirt {
         return id;
     }
 
-    public boolean updateShirt(SQLiteDatabase db,Integer id,String collor,String pocket,String hand_cuff,String shirt_style,String shoulder_style,String shirt_type,String mundah,Boolean patti,Boolean back_pleat,Boolean hand_fold,Long customer_id) {
-//        SQLiteDatabase db = this.getWritableDatabase();
+    public boolean updateShirt(SQLiteDatabase db,Long id,String collor,String pocket,String hand_cuff,String shirt_style,String shoulder_style,String shirt_type,String mundah,Boolean patti,Boolean back_pleat,Boolean hand_fold,Long customer_id) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLLOR, collor);
         contentValues.put(POCKET, pocket);
@@ -108,33 +104,34 @@ public class Shirt {
         ContentValues initialValues = new ContentValues();
         contentValues.put(MODIFIED_DATE, dateFormat.format(date));
 
-        db.update(SHIRT_TABLE, contentValues, SHIRT_ID + " = ? ", new String[] { Integer.toString(id) } );
+        db.update(SHIRT_TABLE, contentValues, SHIRT_ID + " = ? ", new String[] { Long.toString(id) } );
         Log.v("Shirt Measurements Updated ",  (Long.toString(id)));
         return true;
     }
 
-    public Cursor getShirt(SQLiteDatabase db,int id) {
-//        SQLiteDatabase db = this.getReadableDatabase();
+    public Cursor getShirt(SQLiteDatabase db,Long id) {
         Cursor res = db.rawQuery( "SELECT * FROM " + SHIRT_TABLE + " WHERE " +
-                SHIRT_ID + "=?", new String[] { Integer.toString(id) } );
+                SHIRT_ID + "=?", new String[] { Long.toString(id) } );
         return res;
     }
 
     public Cursor getshirtsByCustomerId(SQLiteDatabase db,int id) {
-//        SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + SHIRT_TABLE + " WHERE " +
                 CUSTOMER_ID + "=?", new String[] { Integer.toString(id) } );
         return res;
     }
 
     public Cursor getAllShirts(SQLiteDatabase db) {
-//        SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + SHIRT_TABLE, null );
         return res;
     }
 
+    public Cursor getShirtsbyCustomerId(SQLiteDatabase db,Long customerId) {
+        Cursor res = db.rawQuery( "SELECT * FROM " + SHIRT_TABLE +" WHERE CUSTOMER_ID = "+customerId, null );
+        return res;
+    }
+
     public Integer deleteShirt(SQLiteDatabase db,Integer id) {
-//        SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(SHIRT_TABLE,
                 SHIRT_ID + " = ? ",
                 new String[] { Integer.toString(id) });

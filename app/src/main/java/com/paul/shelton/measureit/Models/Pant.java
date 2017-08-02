@@ -1,10 +1,8 @@
-package com.paul.shelton.measureit.Models;
+package com.paul.shelton.measureit.models;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -37,7 +35,7 @@ public class Pant {
     public void CreateTable(SQLiteDatabase db) {
         Log.v("Create application Table",PANT_TABLE );
         db.execSQL("CREATE TABLE " + PANT_TABLE + "(" +
-                PANT_ID + " TEXT PRIMARY KEY, " +
+                PANT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 PLEAT + " TEXT, " +
                 BELT_LOOP + " TEXT, " +
                 BACK_POCKET + " TEXT, " +
@@ -82,7 +80,7 @@ public class Pant {
         return id;
     }
 
-    public boolean updatePant(SQLiteDatabase db,Integer id,String pleat,String belt_loop,String back_pocket,String waist,String pocket_type,Boolean ticket_pocket,Boolean side_stitch,Boolean botton_zip,Long customer_id) {
+    public boolean updatePant(SQLiteDatabase db,Long id,String pleat,String belt_loop,String back_pocket,String waist,String pocket_type,Boolean ticket_pocket,Boolean side_stitch,Boolean botton_zip,Long customer_id) {
 //        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PLEAT,pleat);
@@ -101,22 +99,22 @@ public class Pant {
         contentValues.put(MODIFIED_DATE, dateFormat.format(date));
 
 
-        db.update(PANT_TABLE, contentValues, PANT_ID + " = ? ", new String[] { Integer.toString(id) } );
+        db.update(PANT_TABLE, contentValues, PANT_ID + " = ? ", new String[] { Long.toString(id) } );
         Log.v("Pant Measurements Updated ",  (Long.toString(id)));
         return true;
     }
 
-    public Cursor getPant(SQLiteDatabase db,int id) {
+    public Cursor getPant(SQLiteDatabase db,Long id) {
 //        SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + PANT_TABLE + " WHERE " +
-                PANT_ID + "=?", new String[] { Integer.toString(id) } );
+                PANT_ID + "=?", new String[] { Long.toString(id) } );
         return res;
     }
 
-    public Cursor getPantsByCustomerId(SQLiteDatabase db,int id) {
+    public Cursor getPantsByCustomerId(SQLiteDatabase db,Long id) {
 //        SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + PANT_TABLE + " WHERE " +
-                CUSTOMER_ID + "=?", new String[] { Integer.toString(id) } );
+                CUSTOMER_ID + "=?", new String[] { Long.toString(id) } );
         return res;
     }
 
